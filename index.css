@@ -5,6 +5,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  height: 70px;
 }
 
 .nav {
@@ -44,6 +45,7 @@ header {
   text-decoration: none;
   font-size: 12px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 .imageleft {
@@ -74,7 +76,7 @@ header {
   right: 650px;
 }
 
-h1 {
+.title {
   position: absolute;
   top: 280px;
   left: 350px;
@@ -92,9 +94,60 @@ h1 {
   left: 340px;
 }
 
-p {
+.subtitle {
   position: absolute;
   top: 500px;
   left: 340px;
   font-size: 12px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 1080px) {
+  .nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .imageright {
+    display: none;
+  }
+}
+
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+@media screen and (max-width: 1080px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #a2a2a4;
+    position: absolute;
+  }
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
 }
